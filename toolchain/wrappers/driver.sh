@@ -15,7 +15,13 @@
 
 #ln -sf driver.sh objcopy example linker cmd
 
-PROG=$(basename "$0")
+WRAPPER_PROG="$1"
+if [[ -n "${WRAPPER_PROG}" ]]; then
+  shift
+  PROG=$(basename "${WRAPPER_PROG}")
+else
+  PROG=$(basename "$0")
+fi
 DRIVER_DIR=$(dirname "$0")
 TOOLCHAIN="toolchain_coralnpu_v2"
 PREFIX="riscv32-unknown-elf"
