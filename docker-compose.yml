@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # Main development container
+  dev:
+    build: .
+    volumes:
+      # Mount current directory to /workspace in container
+      # This allows you to edit files in Windows and build in Linux/Docker
+      - .:/workspace
+    working_dir: /workspace
+    # Metadata for better container naming
+    container_name: coralnpu_dev
+    # Keep container running so we can attach to it
+    command: tail -f /dev/null
