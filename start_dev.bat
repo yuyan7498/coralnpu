@@ -17,6 +17,6 @@ docker compose up -d --build
 REM Enter the container
 echo Entering Linux environment...
 echo Type 'exit' to close the session (container will keep running).
-docker compose exec dev /bin/bash
+docker compose exec dev /bin/bash -lc "git config --global --add safe.directory /workspace; exec /bin/bash"
 
 pause

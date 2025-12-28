@@ -1,0 +1,11 @@
+*.sh text eol=lf
+*.ld text eol=lf
+*.S text eol=lf
+*.h text eol=lf
+*.c text eol=lf
+*.cc text eol=lf
+*.cpp text eol=lf
+*.scala text eol=lf
+*.bzl text eol=lf
+*.bazel text eol=lf
+*.bazelrc text eol=lf

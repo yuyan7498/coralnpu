@@ -1,1 +1,10 @@
-driver.sh
+#!/bin/bash
+PROG=$(basename "$0")
+TOOLCHAIN="toolchain_coralnpu_v2"
+PREFIX="riscv32-unknown-elf"
+
+if [[ -n "${EXT_BUILD_ROOT}" ]]; then
+  exec "${EXT_BUILD_ROOT}/external/${TOOLCHAIN}/bin/${PREFIX}-${PROG}" "$@"
+else
+  exec "external/${TOOLCHAIN}/bin/${PREFIX}-${PROG}" "$@"
+fi

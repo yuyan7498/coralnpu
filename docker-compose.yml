@@ -4,6 +4,9 @@ services:
   # Main development container
   dev:
     build: .
+    environment:
+      # Use GitHub releases to avoid TLS issues on mirror.bazel.build.
+      - BAZELISK_BASE_URL=https://github.com/bazelbuild/bazel/releases/download
     volumes:
       # Mount current directory to /workspace in container
       # This allows you to edit files in Windows and build in Linux/Docker
